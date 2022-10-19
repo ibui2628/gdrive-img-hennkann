@@ -1,5 +1,5 @@
 # gdrive-img-hennkann
-自分のために作ったWEDツール
+自分のために作ったWEBツール
 
 GoogleDriveの写真をimgタグなどで表示するためのURLを作成するツールです
 
