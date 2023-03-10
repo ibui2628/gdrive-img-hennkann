@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="code.js"></script>
+    <title>gdrive ダウンロードURL変換器</title>
+</head>
+<body>
+    <div class="box1">
+    <a href="./">imgurl変換</a><span> | ダウンロードURL変換</span>
+    <h1>ダウンロードURL変換</h1>
+    <input type="url" id="gdive">
+    <button type="button" onclick="dljs()" style="width:100px;height:50px;background-color:#32f;color: #fff;">変換!</button>
+    </div>
+    <br>
+    <div id="kennse" class="box2">
+    <p>変換後のURL</p>
+    <p></p>
+    <input id="end" readonly>
+    <button type="button" onclick="copy()" title="コピーする">copy!</button>
+    </div>
+    <a href="https://istudio2628.wordpress.com/2022/07/25/gdrive-img-hennkann/" target="_blank" rel="noopener">詳細サイト</a>
+    <script>document.getElementById("kennse").style.display ="none";</script>
+    <style>
+     input{width:600px;height:30px;}
+    .box1{border: #004b32 solid 3px;  padding: 3px; text-align: center;}
+    .box2{border: #000 solid 3px;  padding: 3px; text-align: center; background-color: #c6fbff;}
+    .box2 button{
+        background-color: yellow;
+        padding: 10px;
+    }
+    </style>
+    <script>
+
+
+function dljs() {
+const gdive1 = document.getElementById("gdive")
+const gdive2 = gdive1.value
+const ken = gdive2.substr(8 ,16);
+if (ken == "drive.google.com") {
+const code = gdive2.substr(32 ,33);
+const imgurl = "https://drive.google.com/uc?export=download&id="+code;
+document.getElementById("kennse").style.display ="block";
+document.getElementById( "end" ).value = imgurl ;
+} else {  
+    alert("正しいURLを入力してください");
+}
+}
+    </script>
+</body>
+</html>
